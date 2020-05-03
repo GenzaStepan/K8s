@@ -28,7 +28,7 @@
     
 - name: Create dir k8s
   file:
-    path: /k8s
+    path: /k8s/git
     state: directory
 
 - git:
@@ -36,3 +36,5 @@
     dest: /k8s/git
     clone: yes
     update: yes
+    
+- copy: src=/k8s/git/create-config.sh dest=/k8s
