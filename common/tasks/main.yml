@@ -28,6 +28,11 @@
     
 - name: Create dir k8s
   file:
+    path: /k8s
+    state: directory
+    
+- name: Create dir k8s/git
+  file:
     path: /k8s/git
     state: directory
 
