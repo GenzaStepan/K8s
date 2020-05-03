@@ -39,11 +39,13 @@
     <None Include="docker.yaml" />
     <None Include="docker\tasks\main.yml" />
     <None Include="etcd.yaml" />
+    <None Include="haproxy\haproxy.cfg.tmpl" />
     <None Include="hosts.ini" />
     <None Include="kubeadmin\kubeadm-init.yaml.tmpl" />
     <None Include="kubelet.yaml" />
     <None Include="kubelet\tasks\main.yml" />
     <None Include="README.md" />
+    <None Include="reset-cluster.yml" />
     <None Include="roles\etcd\.DS_Store" />
     <None Include="roles\etcd\tasks\main.yml" />
     <None Include="roles\etcd\templates\etcd.env.tmpl" />

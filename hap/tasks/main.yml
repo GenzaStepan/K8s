@@ -1,0 +1,23 @@
+- name: software-properties-common
+  apt:
+    name: ['software-properties-common']
+    update_cache: yes
+
+- name: add-apt-repository
+  apt_repository:
+    repo: 'ppa:vbernat/haproxy-2.0'
+    state: present
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: install haproxy
+  apt:
+    name: ['haproxy=2.0.\*']
+    update_cache: yes
+
+- name: Create haproxy init yaml
+  shell: ./create-config.sh haproxy
+  args:
+    chdir: /k8s
