@@ -11,3 +11,17 @@
   ufw:
     rule: allow
     name: OpenSSH
+    
+- name: Enable & start sshd
+  systemd:
+    name: sshd
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+- name: Enable & start ssh
+  systemd:
+    name: ssh
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
