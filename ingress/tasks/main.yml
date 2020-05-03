@@ -1,4 +1,0 @@
-- name: Create ingress init yaml
-  shell: ./create-config.sh ingress
-  args:
-    chdir: /k8s

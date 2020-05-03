@@ -34,7 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="ingress\service-nodeport.yaml.tmpl" />
-    <None Include="ingress\tasks\main.yml" />
     <None Include="ingress.yaml" />
     <None Include="hap\tasks\main.yml" />
     <None Include="common.yaml" />
