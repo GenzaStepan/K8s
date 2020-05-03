@@ -25,21 +25,17 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
-    
-- name: Create dir k8s
-  file:
-    path: /k8s
-    state: directory
-    
-- name: Create dir k8s/git
+
+- name: Remove k8s/git
   file:
     path: /k8s/git
-    state: directory
+    state: absent
 
-- git:
-    repo: 'https://github.com/GenzaStepan/K8s.git'
-    dest: /k8s/git
-    clone: yes
-    update: yes
-    
-- copy: src=/k8s/git/create-config.sh dest=/k8s
+# - git:
+    # repo: 'https://github.com/GenzaStepan/K8s.git'
+    # dest: /k8s/git
+    # clone: yes
+    # update: yes
+
+# - name: Changing perm of "/foo/bar.sh", adding "+x"
+  # file: dest=/foo/bar.sh mode=a+x
