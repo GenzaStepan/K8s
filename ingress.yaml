@@ -1,0 +1,11 @@
+- name: Setting Up ingress
+  children:
+    masters:
+      hosts: master1
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Install ingress
+      include_role:
+        name: ingress
