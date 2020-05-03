@@ -13,9 +13,7 @@
     update_cache: yes
 
 - name: install haproxy
-  apt:
-    name: ['haproxy=2.0.\*']
-    update_cache: yes
+  apt: name=haproxy=2.0.\* state=present
 
 - name: Create haproxy init yaml
   shell: ./create-config.sh haproxy
