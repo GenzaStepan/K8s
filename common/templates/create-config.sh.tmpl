@@ -24,11 +24,9 @@ export K8SHA_HOSTNAME2={{hostvars[groups['masters'][1]]['ansible_hostname']}}
 # master03 hostname
 export K8SHA_HOSTNAME3={{hostvars[groups['masters'][2]]['ansible_hostname']}}
 
-export HOSTNAME={{ansible_hostname}}
+export CURRENT_HOSTNAME={{ansible_hostname}}
 
-export HOST={{ansible_host}}
-
-export HOST1={{my_hostname}}
+export CURRENT_HOST={{ansible_host}}
 
 ##############################
 # please do not modify anything below
@@ -43,8 +41,8 @@ if [[ $1 == 'docker' ]]; then
   etcd_host=etcd3
 fi
   sed \
-  -e "s/IPLOCAL/$(hostname -i)/g" \
-  -e "s/HOSTNAME/$etcd_host/g" \
+  -e "s/IPLOCAL/$CURRENT_HOST/g" \
+  -e "s/HOSTNAME/$CURRENT_HOSTNAME/g" \
   -e "s/K8SHA_IP1/$K8SHA_IP1/g" \
   -e "s/K8SHA_IP2/$K8SHA_IP2/g" \
   -e "s/K8SHA_IP3/$K8SHA_IP3/g" \
@@ -55,19 +53,19 @@ fi
 
 if [[ $1 == 'kubeadm' ]] || [[ $1 == 'all' ]]; then
   sed \
-  -e "s/IPLOCAL/$(hostname -i)/g" \
-  -e "s/HOSTNAME/$etcd_host/g" \
+  -e "s/IPLOCAL/$CURRENT_HOST/g" \
+  -e "s/HOSTNAME/$CURRENT_HOSTNAME/g" \
   -e "s/K8SHA_IP1/$K8SHA_IP1/g" \
   -e "s/K8SHA_IP2/$K8SHA_IP2/g" \
   -e "s/K8SHA_IP3/$K8SHA_IP3/g" \
-  kubeadmin/kubeadm-init.yaml.tmpl > kubeadmin/kubeadm-init.yaml
+  /k8s/git/kubeadmin/kubeadm-init.yaml.tmpl > /k8s/kubeadm-init.yaml
   echo kubeadm-init file create
-  cat kubeadmin/kubeadm-init.yaml
+  cat /k8s/kubeadm-init.yaml
 fi
 
 if [[ $1 == 'haproxy' ]] || [[ $1 == 'all' ]]; then
   sed \
-  -e "s/IPLOCAL/$(hostname -i)/g" \
+  -e "s/IPLOCAL/$CURRENT_HOST/g" \
   -e "s/K8SHA_IP1/$K8SHA_IP1/g" \
   -e "s/K8SHA_IP2/$K8SHA_IP2/g" \
   -e "s/K8SHA_IP3/$K8SHA_IP3/g" \
