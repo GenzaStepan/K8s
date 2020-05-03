@@ -1,0 +1,13 @@
+- name: 
+  apt:
+    name: ['curl', 'git', 'apt-transport-https', 'gnupg2', 'python', 'openssh-server']
+    update_cache: yes
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: allow OpenSSH
+  ufw:
+    rule: allow
+    name: OpenSSH
