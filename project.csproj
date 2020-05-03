@@ -33,12 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="hap\tasks\main.yml" />
     <None Include="common.yaml" />
     <None Include="common\tasks\main.yml" />
     <None Include="common\templates\create-config.sh.tmpl" />
     <None Include="docker.yaml" />
     <None Include="docker\tasks\main.yml" />
     <None Include="etcd.yaml" />
+    <None Include="hap.yaml" />
     <None Include="haproxy\haproxy.cfg.tmpl" />
     <None Include="hosts.ini" />
     <None Include="kubeadmin\kubeadm-init.yaml.tmpl" />

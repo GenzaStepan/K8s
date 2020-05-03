@@ -1,9 +1,9 @@
-- name: Setting Up kubernetes programs
-  hosts: all
+- name: Setting Up haproxy
+  hosts: workers
   become: yes
   become_method: sudo
 
   tasks:
-    - name: Install kubelet, kubeadm, kubectl
+    - name: Install haproxy 
       include_role:
-        name: kubelet
+        name: hap
