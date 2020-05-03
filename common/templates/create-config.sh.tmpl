@@ -16,43 +16,23 @@ export K8SHA_IP3=192.168.122.163
 
 
 # master01 hostname
-export K8SHA_HOSTNAME1=ubuntu
+export K8SHA_HOSTNAME1={{hostvars[groups['masters'][0]]['ansible_hostname']}}
 
 # master02 hostname
-export K8SHA_HOSTNAME2=kubmaster2
+export K8SHA_HOSTNAME2={{hostvars[groups['masters'][1]]['ansible_hostname']}}
 
 # master03 hostname
-export K8SHA_HOSTNAME3=kubmaster3
+export K8SHA_HOSTNAME3={{hostvars[groups['masters'][2]]['ansible_hostname']}}
 
-#etcd tocken:
-export ETCD_TOKEN=3489bf61bdfe1b3ae077d6fd9e7efefd
+export HOSTNAME={{ansible_hostname}}
 
-#etcd version
-export ETCD_VERSION="v3.3.10"
+export HOST={{ansible_host}}
 
+export HOST1={{my_hostname}}
 
 ##############################
 # please do not modify anything below
 ##############################
-
-# config etcd cluster
-if [[ $1 == 'etcd' ]] || [[ $1 == 'all' ]]; then
-  touch /etc/etcd.env
-  echo PEER_NAME=$(hostname) > /etc/etcd.env
-  echo PRIVATE_IP=$(hostname -i) >> /etc/etcd.env
-  sed \
-  -e "s/K8SHA_IPLOCAL/$(hostname -i)/g" \
-  -e "s/K8SHA_IP1/$K8SHA_IP1/g" \
-  -e "s/K8SHA_IP2/$K8SHA_IP2/g" \
-  -e "s/K8SHA_IP3/$K8SHA_IP3/g" \
-  -e "s/K8SHA_ETCDNAME/$(hostname)/g" \
-  -e "s/K8SHA_HOSTNAME1/$K8SHA_HOSTNAME1/g" \
-  -e "s/K8SHA_HOSTNAME2/$K8SHA_HOSTNAME2/g" \
-  -e "s/K8SHA_HOSTNAME3/$K8SHA_HOSTNAME3/g" \
-  etcd/etcd.service.tmpl > /etc/systemd/system/etcd.service
-  echo etcd config copy to /etc/systemd/system/etcd.service
-  cat /etc/systemd/system/etcd.service
-fi
 
 if [[ $1 == 'docker' ]]; then
   if [[ $(hostname) == master01 ]]; then

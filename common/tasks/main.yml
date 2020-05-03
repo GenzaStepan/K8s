@@ -37,7 +37,12 @@
     clone: yes
     update: yes
 
-- name: Changing perm of "/create-config.sh", adding "+x"
-  file:
-    path: /k8s/git/create-config.sh
-    mode: +x
+#- name: Changing perm of "/create-config.sh", adding "+x"
+#  file:
+#    path: /k8s/git/create-config.sh
+#    mode: +x
+
+- name: Create create-config
+  template:
+    src: create-config.sh.tmpl
+    dest: /k8s/git/create-config.sh
