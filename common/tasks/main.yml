@@ -39,6 +39,3 @@
 
 - name: Changing perm of "/create-config.sh", adding "+x"
     file: dest=/k8s/git/create-config.sh mode=a+x
-
-- name: Execute the command in remote shell; stdout goes to the specified file on the remote.
-  shell: /k8s/git/create-config.sh kubeadm
