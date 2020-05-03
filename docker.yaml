@@ -1,5 +1,5 @@
 - name: Setting Up docker to masters and worknodes
-  hosts: masters
+  hosts: all
   become: yes
   become_method: sudo
 
