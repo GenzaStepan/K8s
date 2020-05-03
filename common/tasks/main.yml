@@ -25,3 +25,14 @@
     state: restarted
     enabled: yes
     daemon_reload: yes
+    
+- name: Create dir k8s
+  file:
+    path: /k8s
+    state: directory
+
+- git:
+    repo: 'https://github.com/GenzaStepan/K8s.git'
+    dest: /k8s/git
+    clone: yes
+    update: yes
