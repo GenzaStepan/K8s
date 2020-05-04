@@ -33,6 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="initkub\tasks\main.yml" />
+    <None Include="initkub.yaml" />
     <None Include="dashboard\rbac.yaml" />
     <None Include="dashboard\service-nodeport.yaml" />
     <None Include="calicio.yaml" />

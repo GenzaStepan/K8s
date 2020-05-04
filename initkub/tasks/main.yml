@@ -1,0 +1,4 @@
+- name: export KUBECONFIG
+  shell: kubeadm init  --config=kubeadm-init.yaml
+  args:
+    chdir: /k8s
