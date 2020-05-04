@@ -4,7 +4,7 @@
 
 - name: Apt packages
   apt:
-    name: ['curl', 'git', 'apt-transport-https', 'gnupg2', 'python', 'openssh-server', 'apt-transport-https']
+    name: ['curl', 'git', 'apt-transport-https', 'gnupg2', 'python', 'openssh-server', 'apt-transport-https', 'ca-certificates', 'software-properties-common']
     update_cache: yes
 
 - name: Update apt cache
