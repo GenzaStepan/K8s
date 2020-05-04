@@ -1,19 +1,9 @@
-- name: Setting Up calicio to master2
-  hosts: master2
-  become: yes
-  become_method: sudo
-
-  tasks
-    - name: Install initkub2
-      include_role:
-        name: initkub
-
-- name: Setting Up calicio to master3
-  hosts: master3
+- name: Setting Up calicio to master 2 / 3
+  hosts: mastersother
   become: yes
   become_method: sudo
 
   tasks:
-    - name: Install initkub3
+    - name: Install initkub
       include_role:
         name: initkub
