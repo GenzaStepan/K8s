@@ -1,6 +1,10 @@
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
 - name: 
   apt:
-    name: ['curl', 'git', 'apt-transport-https', 'gnupg2', 'python', 'openssh-server']
+    name: ['curl', 'git', 'apt-transport-https', 'gnupg2', 'python', 'openssh-server', 'apt-transport-https']
     update_cache: yes
 
 - name: Update apt cache
@@ -51,3 +55,13 @@
   shell: ./create-config.sh kubeadm
   args:
     chdir: /k8s
+
+- name: Remove swapfile from /etc/fstab
+  mount:
+    name: swap
+    fstype: swap
+    state: absent
+
+- name: Disable swap
+  shell: swapoff -a
+  when: ansible_swaptotal_mb > 0

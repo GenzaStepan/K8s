@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="dashboard\rbac.yaml" />
+    <None Include="dashboard\service-nodeport.yaml" />
     <None Include="ingress\service-nodeport.yaml.tmpl" />
-    <None Include="ingress.yaml" />
     <None Include="hap\tasks\main.yml" />
     <None Include="common.yaml" />
     <None Include="common\tasks\main.yml" />
