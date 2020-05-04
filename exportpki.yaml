@@ -1,5 +1,5 @@
 - name: Setting Up calicio to master 2 / 3
-  hosts: mastersother
+  hosts: masterone
   become: yes
   become_method: sudo
 
