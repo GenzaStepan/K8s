@@ -2,7 +2,7 @@
   apt:
     update_cache: yes
 
-- name: 
+- name: Apt packages
   apt:
     name: ['curl', 'git', 'apt-transport-https', 'gnupg2', 'python', 'openssh-server', 'apt-transport-https']
     update_cache: yes
@@ -56,11 +56,15 @@
   args:
     chdir: /k8s
 
-- name: Remove swapfile from /etc/fstab
+- name: "Remove swap device(s) from /etc/fstab"
   mount:
-    name: swap
+    src: '{{ item }}'
+    path: none
     fstype: swap
+    backup: yes
     state: absent
+  with_items: '{{ swapdevs.stdout_lines }}'
+  when: 'swapdevs.stdout_lines |length > 0'
 
 - name: Disable swap
   shell: swapoff -a
