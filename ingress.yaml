@@ -1,0 +1,9 @@
+- name: Setting Up ingress
+  hosts: masterone
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Install initkub
+      include_role:
+        name: ingress
