@@ -56,15 +56,11 @@
   args:
     chdir: /k8s
 
-- name: "Remove swap device(s) from /etc/fstab"
-  mount:
-    src: '{{ item }}'
-    path: none
-    fstype: swap
-    backup: yes
-    state: absent
-  with_items: '{{ swapdevs.stdout_lines }}'
-  when: 'swapdevs.stdout_lines |length > 0'
+- name: Disable SWAP in fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    replace: '# \1'
 
 - name: Disable swap
   shell: swapoff -a
