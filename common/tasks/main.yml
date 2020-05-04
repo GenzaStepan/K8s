@@ -16,11 +16,11 @@
     rule: allow
     name: OpenSSH
     
-- name: Open port 6443
-  firewalld:
-    port: 6443/udp
-    permanent: yes
-    state: enabled
+#- name: Open port 6443
+#  firewalld:
+#    port: 6443/tcp
+#    permanent: yes
+#    state: enabled
 
 - name: Enable & start sshd
   systemd:
