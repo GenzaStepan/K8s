@@ -35,6 +35,8 @@
   <ItemGroup>
     <None Include="dashboard\rbac.yaml" />
     <None Include="dashboard\service-nodeport.yaml" />
+    <None Include="calicio.yaml" />
+    <None Include="hostsm.ini" />
     <None Include="ingress\service-nodeport.yaml.tmpl" />
     <None Include="hap\tasks\main.yml" />
     <None Include="common.yaml" />
@@ -47,6 +49,7 @@
     <None Include="haproxy\haproxy.cfg.tmpl" />
     <None Include="hosts.ini" />
     <None Include="kubeadmin\kubeadm-init.yaml.tmpl" />
+    <None Include="calicio\tasks\main.yml" />
     <None Include="kubelet.yaml" />
     <None Include="kubelet\tasks\main.yml" />
     <None Include="README.md" />
