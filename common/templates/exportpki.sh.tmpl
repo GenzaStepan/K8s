@@ -1,2 +1,2 @@
-scp -r /etc/kubernetes/pki {{hostvars[groups['masters'][1]]['ansible_host']}}:/k8s/
-scp -r /etc/kubernetes/pki {{hostvars[groups['masters'][2]]['ansible_host']}}:/k8s/
+scp -r /etc/kubernetes/pki {{hostvars[groups['masters'][1]]['ansible_host']}}:/etc/kubernetes/
+scp -r /etc/kubernetes/pki {{hostvars[groups['masters'][2]]['ansible_host']}}:/etc/kubernetes/
