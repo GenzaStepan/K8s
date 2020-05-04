@@ -62,6 +62,11 @@
   args:
     chdir: /k8s
 
+- name: Create kubeadm init yaml
+  shell: ./create-config.sh ingress
+  args:
+    chdir: /k8s
+
 - name: Disable SWAP in fstab
   replace:
     path: /etc/fstab
