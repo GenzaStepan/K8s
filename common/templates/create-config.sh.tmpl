@@ -6,13 +6,13 @@
 
 
 # master01 ip address
-export K8SHA_IP1=192.168.122.90
+export K8SHA_IP1={{hostvars[groups['masters'][0]]['ansible_host']}}
 
 # master02 ip address
-export K8SHA_IP2=192.168.122.242
+export K8SHA_IP2={{hostvars[groups['masters'][1]]['ansible_hostname']}}
 
 # master03 ip address
-export K8SHA_IP3=192.168.122.163
+export K8SHA_IP3={{hostvars[groups['masters'][2]]['ansible_hostname']}}
 
 
 # master01 hostname
