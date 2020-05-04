@@ -1,0 +1,4 @@
+- name: export
+  shell: ./exportpki.sh
+  args:
+    chdir: /k8s

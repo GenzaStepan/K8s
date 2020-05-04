@@ -52,9 +52,19 @@
     src: create-config.sh.tmpl
     dest: /k8s/create-config.sh
 
+- name: Create exportpki
+  template:
+    src: exportpki.sh.tmpl
+    dest: /k8s/exportpki.sh
+
 - name: Changing perm of "/create-config.sh", adding "+x"
   file:
     path: /k8s/create-config.sh
+    mode: +x
+
+- name: Changing perm of "/exportpki.sh", adding "+x"
+  file:
+    path: /k8s/exportpki.sh
     mode: +x
 
 - name: Create kubeadm init yaml

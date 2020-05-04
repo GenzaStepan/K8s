@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="common\templates\exportpki.sh.tmpl" />
+    <None Include="exportpki\tasks\main.yml" />
+    <None Include="ingress\tasks\main.yml" />
+    <None Include="ingress.yaml" />
+    <None Include="exportpki.yaml" />
+    <None Include="initkubfirst.yaml" />
     <None Include="initkub\tasks\main.yml" />
     <None Include="initkub.yaml" />
     <None Include="dashboard\rbac.yaml" />

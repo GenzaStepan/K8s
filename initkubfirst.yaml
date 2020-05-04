@@ -1,0 +1,9 @@
+- name: Setting Up calicio to master 1
+  hosts: masterone
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Install initkub master1
+      include_role:
+        name: initkub
