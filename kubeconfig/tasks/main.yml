@@ -1,11 +1,10 @@
-- name: export KUBECONFIG
-  shell: mkdir -p /home/myk8s/.kube
+- name: create .kube directory
+    path: $HOME/.kube
+    state: directory
+    mode: 0755
 
 - name: export KUBECONFIG
   shell: cp -i /etc/kubernetes/admin.conf /home/myk8s/.kube/config
 
 - name: export KUBECONFIG
   shell: chown $(id -u):$(id -g) /home/myk8s/.kube/config
-
-- name: export KUBECONFIG
-  shell: export KUBECONFIG=/etc/kubernetes/admin.conf
