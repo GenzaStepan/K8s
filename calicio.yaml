@@ -1,9 +1,9 @@
-- name: Setting Up calicio to master1
+- name: Setting Up config
   hosts: masterone
   become: yes
   become_method: sudo
 
   tasks:
-    - name: Install calicio
+    - name: Install export config
       include_role:
-        name: calicio
+        name: kubeconfig

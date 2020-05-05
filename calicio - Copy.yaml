@@ -1,0 +1,9 @@
+- name: Setting Up calicio to master1
+  hosts: masterone
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Install calicio
+      include_role:
+        name: calicio

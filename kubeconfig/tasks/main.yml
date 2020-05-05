@@ -9,6 +9,3 @@
 
 - name: export KUBECONFIG
   shell: export KUBECONFIG=/etc/kubernetes/admin.conf
-
-- name: apply calico
-  shell: kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml --kubeconfig /etc/kubernetes/admin.conf
