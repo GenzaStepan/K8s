@@ -5,7 +5,7 @@
 
 - name: Get etcd archive
   get_url:
-    url: https://github.com/coreos/etcd/releases/download/{{etcd_version}}/etcd-{{etcd_version}}-linux-amd64.tar.gz
+    url: https://storage.googleapis.com/etcd/{{etcd_version}}/etcd-{{etcd_version}}-linux-amd64.tar.gz
     dest: /opt/archives/etcd-{{etcd_version}}-linux-amd64.tar.gz
 
 - name: Get and unpack etcd
