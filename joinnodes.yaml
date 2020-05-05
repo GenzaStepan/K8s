@@ -1,0 +1,9 @@
+- name: Setting join nodes
+  hosts: workers
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: join nodes
+      include_role:
+        name: joinnodes

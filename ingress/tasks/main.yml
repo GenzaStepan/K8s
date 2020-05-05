@@ -1,5 +1,5 @@
 - name: apply ingress
-  shell: kubectl apply -f https://github.com/kubernetes/ingress-nginx/blob/master/deploy/static/provider/cloud/deploy.yaml
+  shell: kubectl apply -f https://github.com/kubernetes/ingress-nginx/blob/master/deploy/static/provider/cloud/deploy.yaml --kubeconfig /etc/kubernetes/admin.conf
 
 - name: apply ingress
-  shell: kubectl apply -f /k8s/service-nodeport.yaml
+  shell: kubectl apply -f /k8s/service-nodeport.yaml --kubeconfig /etc/kubernetes/admin.conf

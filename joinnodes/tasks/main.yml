@@ -1,0 +1,9 @@
+- name: Changing perm of "/join.sh", adding "+x"
+  file:
+    path: /k8s/join.sh
+    mode: +x
+
+- name: export KUBECONFIG
+  shell: join.sh
+  args:
+    chdir: /k8s
