@@ -1,0 +1,2 @@
+scp -r /k8s/exportjoin.sh {{hostvars[groups['workers'][0]]['ansible_host']}}:/k8s
+scp -r /k8s/exportjoin.sh {{hostvars[groups['workers'][1]]['ansible_host']}}:/k8s
