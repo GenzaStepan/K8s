@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="calicio.yaml" />
     <None Include="kubeconfig\tasks\main.yml" />
     <None Include="common\templates\exportpki.sh.tmpl" />
     <None Include="ingress\tasks\main.yml" />
@@ -42,7 +43,7 @@
     <None Include="initkub.yaml" />
     <None Include="dashboard\rbac.yaml" />
     <None Include="dashboard\service-nodeport.yaml" />
-    <None Include="calicio.yaml" />
+    <None Include="kubeconfig.yaml" />
     <None Include="hostsm.ini" />
     <None Include="ingress\service-nodeport.yaml.tmpl" />
     <None Include="hap\tasks\main.yml" />
