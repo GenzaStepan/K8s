@@ -1,2 +1,2 @@
 - name: apply calico
-  shell: kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml --kubeconfig /etc/kubernetes/admin.conf
+  shell: kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/v1.6/install/kubernetes/quick-install.yaml --kubeconfig /etc/kubernetes/admin.conf
