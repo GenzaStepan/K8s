@@ -1,14 +1,2 @@
-- name: export KUBECONFIG
-  shell: mkdir -p /home/myk8s/.kube
-
-- name: export KUBECONFIG
-  shell: cp -i /etc/kubernetes/admin.conf /home/myk8s/.kube/config
-
-- name: export KUBECONFIG
-  shell: chown $(id -u):$(id -g) /home/myk8s/.kube/config
-
-- name: export KUBECONFIG
-  shell: export KUBECONFIG=/etc/kubernetes/admin.conf
-
 - name: apply calico
   shell: kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml --kubeconfig /etc/kubernetes/admin.conf
